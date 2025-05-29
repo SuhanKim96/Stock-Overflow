@@ -1,15 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Hero = () => {
+const Hero = ({ onSearch }) => {
+    const [input, setInput] = useState('')
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        onSearch(input.trim())
+    }
+
     return (
         <section className="bg-black py-20">
-        <div className="max-w-7xl mx-auto flex flex-col items-center gap-10">
-            <h1
-                className="text-4xl font-bold text-white sm:text-5xl md:text-5xl">
-                Stock Market Sentiment Analysis
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
+            <h1 className="text-4xl font-bold text-white sm:text-5xl">
+            Stock Market Sentiment Analysis
             </h1>
-            <input type="text" id="ticker_input" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Enter a Ticker Symbol" required />    
-            <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-700 dark:hover:bg-green-500 dark:focus:ring-green-800">Submit</button>
+
+            <form onSubmit={handleSubmit} className="w-full max-w-sm flex gap-2">
+            <input
+                type="text"
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                placeholder="Enter a Ticker Symbol"
+                className="flex-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg p-4 focus:ring-green-500 focus:border-green-500"
+                required
+            />
+            <button
+                type="submit"
+                className="bg-green-700 hover:bg-green-800 text-white font-medium rounded-lg text-sm px-5 py-2.5"
+            >
+                Submit
+            </button>
+            </form>
         </div>
         </section>
     )
