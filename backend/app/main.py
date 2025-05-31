@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from app.routes import user
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello from Stock Overflow API"}
+app.include_router(user.router, prefix="/api/users", tags=["users"])
