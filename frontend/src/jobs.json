@@ -1,0 +1,48 @@
+{
+  "NVDA": [
+    {
+      "date": "2025-05-29",
+      "headline": "Jefferies maintains NVIDIA stock Buy rating with $185 target",
+      "analysis": "Green",
+      "url": "https://www.investing.com/news/analyst-ratings/jefferies-maintains-nvidia-stock-buy-rating-with-185-target-93CH-4069221",
+      "score": 0.9
+    },
+    {
+      "date": "2025-05-28",
+      "headline": "Nvidia shares surge as earnings beat despite chip export restrictions to China",
+      "analysis": "Green",
+      "url": "https://www.msn.com/en-za/news/other/nvidia-shares-surge-as-earnings-beat-despite-chip-export-restrictions-to-china/ar-AA1FGvlf?ocid=finance-verthp-feeds",
+      "score": 0.8
+    },
+    {
+      "date": "2025-05-29",
+      "headline": "Nvidia CEO Eases Concerns About China With Upbeat Sales Forecast",
+      "analysis": "Yellow",
+      "url": "https://www.bloomberg.com/news/articles/2025-05-28/nvidia-gives-upbeat-forecast-even-as-china-slowdown-mars-growth",
+      "score": 0.7
+    }
+  ],
+  "TSLA": [
+    {
+      "date": "2025-05-28",
+      "headline": "Tesla's EU Sales Down 49%: The Goose Is Cooked",
+      "analysis": "Red",
+      "url": "https://seekingalpha.com/article/4790696-tesla-stock-eu-sales-down-49-percent-overvalued-downgrade-sell",
+      "score": 0.2
+    },
+    {
+      "date": "2025-05-20",
+      "headline": "Elon Musk materially lied to Tesla (TSLA) shareholders – transcript and proof",
+      "analysis": "Red",
+      "url": "https://electrek.co/2025/05/20/elon-musk-materialy-lied-tesla-tsla-shareholders-transcript-proof/",
+      "score": 0.1
+    },
+    {
+      "date": "2025-05-28",
+      "headline": "Tesla reports 20% drop in auto revenue as first-quarter results miss Wall Street estimates",
+      "analysis": "Orange",
+      "url": "https://www.cnbc.com/2025/04/22/tesla-tsla-earnings-report-q1-2025.html",
+      "score": 0.3
+    }
+  ]
+}

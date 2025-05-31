@@ -1,33 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Score from './components/Score'
+import News from './components/News'
+import newsData from './jobs.json'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [ticker, setTicker] = useState('')
+
+  const symbol = ticker.trim().toUpperCase()
+  const articles = symbol ? (newsData[symbol] || []) : []
+
+  const averageScore =
+    articles.length > 0
+      ? articles.reduce((sum, item) => sum + item.score, 0) / articles.length
+      : 0
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Navbar />
+      
+      <Hero onSearch={setTicker} />
+
+      <div className="flex bg-gray-700 items-center justify-center gap-10 py-10">
+        
+        <Score
+          rating={Number(averageScore.toFixed(2))}
+          maxRating={1}
+          size={200}
+          strokeWidth={20}
+          colorClass="text-green-500"
+        />
+        
+        <News ticker={ticker} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
